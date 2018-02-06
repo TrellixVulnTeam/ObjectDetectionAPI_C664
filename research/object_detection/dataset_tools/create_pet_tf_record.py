@@ -158,8 +158,8 @@ def dict_to_tf_example(data,
     truncated.append(int(obj['truncated']))
     poses.append(obj['pose'].encode('utf8'))
     if not faces_only:
-      mask_remapped = mask_np != 2
-      masks.append(mask_remapped)
+        mask_remapped = mask_np != 2
+        masks.append(mask_remapped)
 
   feature_dict = {
       'image/height': dataset_util.int64_feature(height),

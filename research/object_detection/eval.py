@@ -43,6 +43,7 @@ Example usage:
         --model_config_path=model_config.pbtxt \
         --input_config_path=eval_input_config.pbtxt
 """
+
 import functools
 import os
 import tensorflow as tf
@@ -53,6 +54,7 @@ from object_detection.builders import model_builder
 from object_detection.utils import config_util
 from object_detection.utils import label_map_util
 
+os.environ['CUDA_VISIBLE_DEVICES'] = '-1' #run eval job on the cpu
 
 tf.logging.set_verbosity(tf.logging.INFO)
 
